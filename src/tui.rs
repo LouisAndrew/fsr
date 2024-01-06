@@ -32,7 +32,7 @@ impl Tui {
         Self { terminal, handler }
     }
 
-    pub fn setup(&mut self) -> Result<()> {
+    pub fn setup(&mut self, app: &App) -> Result<()> {
         enable_raw_mode()?;
         execute!(io::stderr(), EnterAlternateScreen, EnableMouseCapture)?;
 
@@ -48,6 +48,7 @@ impl Tui {
         self.terminal.hide_cursor()?;
         self.terminal.clear()?;
 
+        self.draw(app)?;
         Ok(())
     }
 

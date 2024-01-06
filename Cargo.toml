@@ -6,11 +6,12 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.77"
-clap = { version = "4.4.12", features = ["derive"] }
 color-eyre = "0.6.2"
-crossterm = "0.27.0"
 ratatui = "0.25.0"
+crossterm = { version = "0.27.0", features = ["event-stream"] }
+futures = "0.3.28"
+tokio = { version = "1.32.0", features = ["full"] }
+tokio-util = "0.7.9"
 
 [dev-dependencies]
 assert_cmd = "2.0.12"

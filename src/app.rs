@@ -1,7 +1,12 @@
-#[derive(Debug, Default)]
+use crate::action::ActionBus;
+
+#[derive(Default)]
 pub struct App {
     pub counter: usize,
     pub should_quit: bool,
+    pub action_bus: ActionBus,
+    pub action_queue: Vec<String>,
+    pub app_log: Vec<String>,
 }
 
 impl App {
